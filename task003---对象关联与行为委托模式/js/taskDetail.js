@@ -47,10 +47,7 @@
             this.editBtn = this.container.querySelector('.head-icon .edit');
             this.taskDate = this.container.querySelector('.head-data p');
             this.taskContent = this.container.querySelector('.task-content p');
-            // _.mixin(Detail.prototype, _.emitter);
             Object.setPrototypeOf(Detail, _.emitter);
-
-            // _.mixin(this, options);
             this.renderUI();
             this.initEvent();
             
@@ -105,7 +102,6 @@
             }); 
             _.addEvent(this.editBtn,'click',function() {
                 that.onEdit();
-                // that.container.parentNode.appendChild(new Editor(that.getData()).container);
             });
         },
         onFinish: function() {
@@ -130,9 +126,7 @@
             this.contentTip =this.container.querySelector('task-content .tips');
             this.confirm = this.container.querySelector('.task-content .yes');
             this.cancel = this.container.querySelector('.task-content .no');
-            // _.mixin(Edit.prototype, _.emitter);
             Object.setPrototypeOf(Edit,_.emitter)
-            // _.mixin(this, options);
             this.renderUI();
             this.initEvent();
         },
@@ -196,12 +190,12 @@
         onConfirm: function() {
             this.emit('confirm');
             this.destroy();
-            // this.gBody.appendChild(this.initDetail);
+           
         },
         onCancel: function() {
             this.emit('cancel');
             this.destroy()
-            // this.gBody.appendChild(this.initDetail);
+       
         }
           
     };

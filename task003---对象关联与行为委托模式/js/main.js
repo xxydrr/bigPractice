@@ -36,9 +36,6 @@
             $.on(element, event, function(e) {
                 var oEvent = e || window.event;
                 var target = oEvent.target || oEvent.srcElement;
-                // if (target.tagName.toLowerCase() === tag) {
-                //     listener.call(target,oEvent);
-                // }
                 var arr = [];
                 var eles = element.querySelectorAll(selector);
                 for(var i=0;i<eles.length;i++) {
@@ -120,7 +117,7 @@
     var containerDetail = $(".container-detail");
     var selectTab = null;
     updateDataNumber(data);
-    // updateTotalDataNumber(data);
+  
       //初始选择第一个tabs 所有
       toSelectTab(tabs[0]);
 
@@ -131,7 +128,6 @@
     // 初始化任务详情
     var initDetail = Object.create(Detail);
     initDetail.init();
-    // Object.setPrototypeOf(initDetail, _.emitter);
 
     initDetail.on('finish', function() {
         if(selectTab.id == 'finished') {
@@ -173,14 +169,11 @@
         });
         containerDetail.appendChild(editInit.container)
 
-        // containerDetail.appendChild(editInit.container);
-    });
 
-    // initDetail = initDetail.container
-    
+    });
+   
     containerDetail.appendChild(initDetail.container);
     var containerRight = $(".container-right");
-    // containerRight.style.display = "block";
     // 更新任务总数
     function updateDataNumber(data) {
         var totalNumber = 0;
@@ -294,7 +287,6 @@
         
     }
 
-    // 包裹任务列表到标签中 @parm {data.category } [{name: '毕业设计', number:1, todos:[{name:'to-do 1', data: '2020-05-08', isFinished: false, content:'完成前言'}], subCategory: []}],
     /**
      *
      *
@@ -413,11 +405,7 @@
     });
     // 2-5.给新增任务的按钮注册点击事件
     $.click(addTask,function() {
-        // containerRight.parentNode.removeChild(containerRight);
-        // initDetail.reset();
-        // gBody.appendChild(initDetail.container);
-        // containerRight.style.display = "none";
-        // initDetail.destroy();
+
         var addEdit = Object.create(Edit);
         addEdit.init({name:'',date:format(new Date()),content:''});
         addEdit.on('confirm',function() {
@@ -442,8 +430,7 @@
             _.save(data);
         })
         containerDetail.appendChild(addEdit.container);
-        // var containerEdit = $(".container-edit")
-        // gBody.appendChild(initDetail.container);
+
     });
     // 选中任务列表标签 渲染任务详情
     function toSelectTask(taskIndex) {

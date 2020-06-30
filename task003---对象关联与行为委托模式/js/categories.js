@@ -57,11 +57,6 @@
         },
         // 添加子节点
         addSubClass: function(obj) {    
-            // console.log(SubCategory.init(obj).container);
-            // var sC = Object.create(SubCategory);
-            // sC.init(obj);
-            // var cT = sC.container;
-            // console.log(cT);
             
             this.cgSubclass.appendChild(SubCategory.init(obj).container);
         },

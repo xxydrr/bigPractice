@@ -25,11 +25,7 @@
             this.body = this.container.querySelector('.new-title');
             this.bodyContent = this.container.querySelector('.new-title h3');
             this.input = this.body.querySelector('input');
-            // 将options复制到组件实例上
-            //  _.mixin(Modal, _.emitter);
             Object.setPrototypeOf(Modal,_.emitter);
-
-            // _.mixin(this,options);
             this._renderUI();
             this._initEvent();
            
@@ -75,8 +71,6 @@
         
     }
     
-    
-     // 使用混入Mixin的方式使得Modal具有事件发射器功能
     //  暴露到全局
     window.Modal = Modal;
 })(util)
